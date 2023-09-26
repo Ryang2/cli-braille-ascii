@@ -1,4 +1,0 @@
-argparse
-cv2
-numpy
-os

@@ -8,7 +8,7 @@ BRAILLE_COL = 4
 BRAILLE_ROW = 2
 
 def get_average(image: np.ndarray, h: int, w: int) -> int:
-    # Return the average luminosity value
+    """Returns the average luminosity value"""
     sum = 0
     for y in range(h):
         for x in range(w):
@@ -36,7 +36,7 @@ def get_braille_char(pixel_group: np.ndarray) -> str:
     return chr(0x2800 + sum)
 
 def resize(image: np.ndarray, width_in_char: int):
-    # Resizes the image such that each row in the resulting ASCII string has width_in_char characters
+    """Resizes the image such that each row in the resulting ASCII string has width_in_char characters"""
     if width_in_char < 0: width_in_char = 80
     new_width = 2 * width_in_char
     height, width = image.shape
@@ -111,5 +111,5 @@ def main():
     except Exception as e:
         print("Error when running image_to_braille:", type(e), e)
 
-if __name__ == "__main__":
+if __name__ == "main":
     main()
