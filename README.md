@@ -6,13 +6,13 @@ A generator that creates ASCII versions of the input image, made up of braille c
 
 Install dependencies with pipenv then run:
 
-`image_to_braille.py [path-of-image] [-w width-in-chars] [-s style] [-i] [-o]`
+`image_to_braille.py [path-of-image] [-w width-in-chars] [-s style] [-i] [-o name-of-file]`
 
 Optional arguments:
 - width: resizes the resulting ASCII with number of characters per row equaling the width
-- style: changes how the threshold is calculated (default is avg_thresh)
+- style: changes how the threshold is calculated (default is Average Threshold)
 - invert: inverts black and white before generating the ASCII
-- output: outputs the resulting ASCII in result.txt
+- output: outputs the resulting ASCII in <name-of-file>.txt instead of printing on the console
 
 The help (-h) option will also display the above options.
 

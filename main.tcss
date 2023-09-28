@@ -1,9 +1,10 @@
 Sidebar {
-    width: 40;
+    width: 70;
+    min_height: 25;
+    height: 100%;
     background: $panel;
     transition: offset 500ms in_out_cubic;
     layer: overlay;
-
 }
 
 Sidebar:focus-within {
@@ -22,4 +23,27 @@ Sidebar Title {
     dock: top;
     text-align: center;
     text-style: bold;
+}
+
+Canvas {
+    width: auto;
+    height: auto;
+    /*Enable to see Canvas Region for Debugging*/
+    /*border: heavy $secondary;*/
+}
+
+.container {
+    height: auto;
+    width: auto;
+}
+
+Switch {
+    height: auto;
+    width: auto;
+}
+
+.label {
+    height: 3;
+    content-align: center middle;
+    width: auto;
 }
