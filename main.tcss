@@ -1,0 +1,49 @@
+Sidebar {
+    width: 70;
+    min_height: 25;
+    height: 100%;
+    background: $panel;
+    transition: offset 500ms in_out_cubic;
+    layer: overlay;
+}
+
+Sidebar:focus-within {
+    offset: 0 0 !important;
+}
+
+Sidebar.-hidden {
+    offset-x: -100%;
+}
+
+Sidebar Title {
+    background: $boost;
+    color: $secondary;
+    padding: 2 4;
+    border-right: vkey $background;
+    dock: top;
+    text-align: center;
+    text-style: bold;
+}
+
+Canvas {
+    width: auto;
+    height: auto;
+    /*Enable to see Canvas Region for Debugging*/
+    /*border: heavy $secondary;*/
+}
+
+.container {
+    height: auto;
+    width: auto;
+}
+
+Switch {
+    height: auto;
+    width: auto;
+}
+
+.label {
+    height: 3;
+    content-align: center middle;
+    width: auto;
+}

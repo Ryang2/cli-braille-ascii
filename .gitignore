@@ -168,10 +168,7 @@ cython_debug/
 tests/
 .pytest_cache/
 __pycache__/
-example-256px.jpg
-example2-256px.jpg
-example-256px.png
-example-1024px.png
+$*
 result.txt
 
 # Others
