@@ -2,7 +2,7 @@
 
 A generator that creates ASCII versions of the input image, made up of braille characters. Meant to be used in terminals/CLIs and is designed as such, but the output ASCII string can be pasted anywhere you can put text in.
 
-![Example](https://raw.githubusercontent.com/Ryang2/cli-braille-ascii/main/images/example-screenshot.jpg)
+![Example](https://raw.githubusercontent.com/Ryang2/cli-braille-ascii/ryang2-branch/images/example-screenshot.jpg)
 
 ## To Run:
 
