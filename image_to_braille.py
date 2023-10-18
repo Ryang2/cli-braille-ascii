@@ -40,7 +40,6 @@ def get_braille_char(pixel_group: np.ndarray) -> str:
 
 def resize(image: np.ndarray, width_in_char: int) -> np.ndarray:
     """Resizes the image such that each row in the resulting ASCII string has width_in_char characters"""
-    if width_in_char < 0: width_in_char = 80
     new_width = 2 * width_in_char
     height, width = image.shape
     new_height = int(new_width * height / width)
@@ -59,8 +58,8 @@ Returns:
 The ASCII string on success, or None on error
 '''
 def process_image(image: np.ndarray, width_in_char: int, style: str, invert: bool) -> str:
-    # Resize image if width_in_char is specified
-    if width_in_char: image = resize(image, width_in_char)
+    # Resize image if width_in_char is greater than 1
+    if width_in_char > 1: image = resize(image, width_in_char)
     h, w = image.shape
 
     # For each value, if it's smaller than the threshold, it's set to 0, else 255
@@ -84,7 +83,7 @@ def process_image(image: np.ndarray, width_in_char: int, style: str, invert: boo
         output += "\n"
     return output
 
-def image_to_braille(image_path: str, width_in_char=None, style=0, invert=False, output=None):
+def image_to_braille(image_path: str, width_in_char: int = -1, style: int =0, invert: bool = False, output: str = ""):
     try:
         # Read in grayscale to focus on luminosity, can try w/ color later
         image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
@@ -107,7 +106,7 @@ def main():
     parser = argparse.ArgumentParser(description="Image to Braille ASCII Art Generator")
     parser.add_argument("image", help="The path of the input file")
     parser.add_argument("-w", "--width", metavar='80', type=int,
-                        help="[Optional] The width in number of characters to resize", default=None)
+                        help="[Optional] The width in number of characters to resize (min 2)", default=None)
     parser.add_argument("-s", "--style", metavar='0', type=int,
                         help="[Optional] The rendering style: "+", ".join(f"[{i}: {style}]" for i, style in enumerate(STYLES)), default=0) 
     parser.add_argument("-i", "--invert", action="store_true",
